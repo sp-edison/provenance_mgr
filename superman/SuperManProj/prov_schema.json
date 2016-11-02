@@ -1,0 +1,44 @@
+{
+	"id": "...",
+	"groupid": "...",
+	"title": "...", 
+	"version": "...",
+	"name": "...",
+	"simulations":
+		{
+			"simulation":
+				[
+					{"id:", "..."} 
+					{"id:", "..."},
+				]
+		}
+}
+
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "EDISON Simulation Provenance Set",
+	"type": "array",
+	"items": {
+		"description": "Provenance on EDISON Simulation",
+		"type": "object",
+		"properties": {
+			"id": {
+				"description": "The unique identifier for a product",
+		    		"type": "integer"
+			}
+	   	},
+		"simulations": {
+		        "type": "object",
+		        "properties": {
+		            "simulation": {
+					"type": "object",
+					"properties": {
+
+					},
+					"required": ["", "", ""]
+			     }
+		        },
+		        "required": ["length", "width", "height"]
+		 },
+	   	"required": ["id", "groupid", "title", "version", "name"]
+}	}
