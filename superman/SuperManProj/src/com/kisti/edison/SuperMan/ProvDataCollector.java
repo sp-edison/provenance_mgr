@@ -5,6 +5,19 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 public class ProvDataCollector {
+	private static Vector<Simulation> sim_rec_vector = new Vector<Simulation>();
+	private static Vector<SimulationJob> simjob_rec_vector = new Vector<SimulationJob>();
+	private static Vector<SimulationJobData> simjobdata_rec_vector = new Vector<SimulationJobData>();
+	
+	/****
+	 * Flush provenance data for next fetch
+	 */
+	public static void flushProvenanceData(){
+		sim_rec_vector = new Vector<Simulation>();
+		simjob_rec_vector = new Vector<SimulationJob>();
+		simjobdata_rec_vector = new Vector<SimulationJobData>();
+	}
+	
 	/****
 	 * Collect a simulation provenance data on a given simulation uuid
 	 * @param simUuid
@@ -53,8 +66,8 @@ public class ProvDataCollector {
 			" and t0."+Constants.simUuidFN+" = t1."+Constants.simUuidFN+"\n"+
 			" and t1."+Constants.jobUuidFN+" = t2."+Constants.jobUuidFN+"\n"+
 			" order by "+Constants.jobSeqNoFN+" asc";
-		System.out.println(query);	
-		Vector<Simulation> sim_vec = new Vector<Simulation>();
+//System.out.println(query);	
+		sim_rec_vector = new Vector<Simulation>();
 		ResultSet rs = EDISON_DB_Connector.executeQuery(query);
 		try {
 			while(rs.next()){
@@ -64,8 +77,8 @@ public class ProvDataCollector {
 				sim_rec.userIdVal = rs.getLong(3);
 				sim_rec.scienceAppIdVal = rs.getLong(4);
 				sim_rec.scienceAppNameVal = rs.getString(5);
-				sim_rec.printContents();
-				sim_vec.add(sim_rec);
+//				sim_rec.printContents();
+				sim_rec_vector.add(sim_rec);
 				
 				SimulationJob simjob_rec = new SimulationJob();
 				simjob_rec.jobUuidVal = rs.getString(6);
@@ -78,14 +91,16 @@ public class ProvDataCollector {
 				simjob_rec.jobUniversityFieldVal = rs.getInt(13);
 				simjob_rec.jobInputDeckYnVal= rs.getShort(14);
 				simjob_rec.jobInputDeckNameVal= rs.getString(15);
-				simjob_rec.printContents();
+//				simjob_rec.printContents();
+				simjob_rec_vector.add(simjob_rec);
 				
 	////int cnt = rs.getInt(1);	
 				
 				SimulationJobData simjobdata_rec = new SimulationJobData();
 				simjobdata_rec.jobDataVal = rs.getString(16);
-				simjobdata_rec.printContents();
-				System.out.println("========================");
+//				simjobdata_rec.printContents();
+				simjobdata_rec_vector.add(simjobdata_rec);
+				//System.out.println("========================");
 				//break;
 			}
 		} catch (SQLException e) {
@@ -94,6 +109,21 @@ public class ProvDataCollector {
 		}
 //		System.out.println("# of solvers: " + Integer.toString(cnt));
 		EDISON_DB_Connector.close();
+	}
+
+	public static Vector<Simulation> getSimulationRecords() {
+		// TODO Auto-generated method stub
+		return sim_rec_vector;
+	}
+
+	public static Vector<SimulationJob> getSimulationJobRecords() {
+		// TODO Auto-generated method stub
+		return simjob_rec_vector;
+	}
+
+	public static Vector<SimulationJobData> getSimulationJobDataRecords() {
+		// TODO Auto-generated method stub
+		return simjobdata_rec_vector;
 	}
 
 //	query = "SELECT " + simUuidFN + ", " + jobSeqNoFN + ", " + groupIdFN +", " + jobUuidFN + ", "+jobStatusFN+", "+jobStartDtFN+", " + jobEndDtFN + ", "
