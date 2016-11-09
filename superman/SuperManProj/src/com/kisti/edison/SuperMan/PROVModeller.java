@@ -26,7 +26,7 @@ public class PROVModeller {
 //				res = PROVTypeDefinition.Used(user.toString(), sciAppName);
 //				res += PROVTypeDefinition.WasAssociatedWith(, sciAppName);
 //				res += PROVTypeDefinition.Used(user.toString(), sciAppName);
-				res = PROVTypeDefinition.WasAssociatedWith(A, B)
+//				res = PROVTypeDefinition.WasAssociatedWith(A, B)
 				break;
 			}
 		}
