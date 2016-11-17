@@ -77,8 +77,8 @@ public class ProvDataCollector {
 				sim_rec.userIdVal = rs.getLong(3);
 				sim_rec.scienceAppIdVal = rs.getLong(4);
 				sim_rec.scienceAppNameVal = rs.getString(5);
-//				sim_rec.printContents();
-				sim_rec_vector.add(sim_rec);
+				sim_rec.printContents();
+//				sim_rec_vector.add(sim_rec);
 				
 				SimulationJob simjob_rec = new SimulationJob();
 				simjob_rec.jobUuidVal = rs.getString(6);
@@ -91,15 +91,15 @@ public class ProvDataCollector {
 				simjob_rec.jobUniversityFieldVal = rs.getInt(13);
 				simjob_rec.jobInputDeckYnVal= rs.getShort(14);
 				simjob_rec.jobInputDeckNameVal= rs.getString(15);
-//				simjob_rec.printContents();
-				simjob_rec_vector.add(simjob_rec);
+				simjob_rec.printContents();
+//				simjob_rec_vector.add(simjob_rec);
 				
 	////int cnt = rs.getInt(1);	
 				
 				SimulationJobData simjobdata_rec = new SimulationJobData();
 				simjobdata_rec.jobDataVal = rs.getString(16);
-//				simjobdata_rec.printContents();
-				simjobdata_rec_vector.add(simjobdata_rec);
+				simjobdata_rec.printContents();
+//				simjobdata_rec_vector.add(simjobdata_rec);
 				//System.out.println("========================");
 				//break;
 			}
