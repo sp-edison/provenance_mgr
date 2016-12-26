@@ -7,6 +7,12 @@ public class Constants {
 	
 	public static String SIMULATION_JOB_DATA_TABLE_NAME = "EDSIM_SimulationJobData";
 	
+	public static String USER_TABLE_NAME = "User_";
+	
+	public static String screenNameFN = "screenName";
+	
+	public static String firstNameFN = "firstName";
+	
 	public static String groupIdFN = "groupId";
 	
 	public static String userIdFN = "userId";
@@ -43,5 +49,20 @@ public class Constants {
 	
 	public static String solverNameVal = "2D_Comp";
 	
-	public static String jobCompletionTimeFN = "jobCompletionTime";	
+	public static String jobCompletionTimeFN = "jobCompletionTime";
+
+	public static String SUPERMAN_LOG_DIR_NAME = "logs/";
+
+	public static String SUPERMAN_NAME = "Superman";
+	
+	public static String ACTED_ON_BEHALF_OF = " ActedOnBehalfOf ";
+
+	public static String WAS_DERIVED_FROM = " WasDerivedFrom ";
+
+	public static String WAS_USED_BY = " WasUsedBy ";
+
+	public static String WAS_ATTRIBUTED_TO = " WasAttributedTo ";
+	
+	
+
 }

@@ -1,6 +1,4 @@
-package com.kisti.edison.SuperMan;
-
-import java.util.Date;
+package com.kisti.edison.SuperMan.model.portal;
 
 public class SimulationJob {
 	public SimulationJob(){}
@@ -25,7 +23,8 @@ public class SimulationJob {
 	
 	public String jobExecPathVal = "";
 	
-	public long jobCompletionTimeVal = -1;
+//	public long jobCompletionTimeVal = -1;
+	public String jobCompletionTimeVal = "";
 	
 	public long jobUniversityFieldVal = -1;
 	

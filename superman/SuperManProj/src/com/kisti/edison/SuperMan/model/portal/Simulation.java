@@ -1,4 +1,4 @@
-package com.kisti.edison.SuperMan;
+package com.kisti.edison.SuperMan.model.portal;
 
 public class Simulation {
 	public Simulation(){}

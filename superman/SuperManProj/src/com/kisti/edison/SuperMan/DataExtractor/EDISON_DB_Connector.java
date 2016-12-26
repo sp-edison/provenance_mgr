@@ -1,4 +1,4 @@
-package com.kisti.edison.SuperMan;
+package com.kisti.edison.SuperMan.DataExtractor;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
